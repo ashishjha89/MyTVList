@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/cast_photo"
+        android:layout_width="60dip"
+        android:layout_height="90dip"
+        android:src="@drawable/person_icon"
+        android:layout_margin="@dimen/intra_detail_margin_views" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/person_name_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:layout_marginTop="@dimen/intra_detail_margin_views"
+            android:layout_marginLeft="@dimen/intra_detail_margin_views"
+            android:textColor="@color/off_white"
+            android:textSize="@dimen/list_item_text_size" />
+
+        <TextView
+            android:id="@+id/cast_name_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:layout_marginTop="@dimen/intra_detail_margin_views"
+            android:layout_marginLeft="@dimen/intra_detail_margin_views"
+            android:textColor="@color/card_item_background"
+            android:textSize="@dimen/list_item_text_size" />
+    </LinearLayout>
+
+
+</LinearLayout>

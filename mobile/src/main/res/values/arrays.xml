@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="drawer_items">
+        <item>My Shows</item>
+        <item>My Movies</item>
+        <item>My Watch List</item>
+        <item>Shows</item>
+        <item>Movies</item>
+    </string-array>
+</resources>

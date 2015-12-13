@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/disable_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/intra_detail_margin_views"
+        android:background="@color/darker_gray"
+        android:alpha="0.75"
+        android:visibility="invisible" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/image_frame">
+
+            <ImageView
+                android:id="@+id/add_show_photo"
+                android:layout_width="@dimen/add_show_width"
+                android:layout_height="@dimen/add_show_height"
+                android:layout_margin="@dimen/intra_detail_margin_views" />
+
+            <ImageView
+                android:id="@+id/disable_photo"
+                android:layout_width="@dimen/add_show_width"
+                android:layout_height="@dimen/add_show_height"
+                android:layout_margin="@dimen/intra_detail_margin_views"
+                android:background="@android:color/black"
+                android:alpha="0.75"
+                android:visibility="gone" />
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/add_item_text"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/intra_detail_margin_views"
+            android:layout_toRightOf="@+id/image_frame"
+            android:gravity="center"
+            android:textColor="@color/off_white"
+            android:textSize="@dimen/list_item_text_size" />
+
+        <ImageView
+            android:id="@+id/show_checkbox"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginRight="20dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/checkbox_black_white"
+            android:visibility="gone" />
+    </RelativeLayout>
+</FrameLayout>

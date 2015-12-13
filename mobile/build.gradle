@@ -1,0 +1,35 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
+
+android {
+    signingConfigs {
+        config {
+            keyAlias 'AndroidTvListKey'
+            keyPassword 'Mtl729AjBmPaB'
+            storeFile file('/home/ashish/Desktop/Keystore/mytvlist.jks')
+            storePassword 'Mtl729AjBmPaB'
+        }
+    }
+    compileSdkVersion 22
+    buildToolsVersion "21.1.2"
+    defaultConfig {
+        applicationId "com.mytvlist"
+        minSdkVersion 16
+        targetSdkVersion 22
+        versionCode 3
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile 'com.android.support:appcompat-v7:22.1.0'
+    compile 'com.android.support:cardview-v7:22.0.+'
+    compile 'com.google.android.gms:play-services-analytics:7.3.0'
+}

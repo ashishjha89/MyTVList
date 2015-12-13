@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/episode_detail_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.75"
+        android:background="@android:color/black" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:id="@+id/card_view"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/show_card_height">
+
+            <ImageView
+                android:id="@+id/card_background_banner"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/show_card_height"
+                android:scaleType="fitXY" />
+
+
+            <ImageView
+                android:id="@+id/card_background_dark_layer"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/show_card_height"
+                android:alpha="0.75"
+                android:background="@android:color/black" />
+
+
+            <LinearLayout
+                android:id="@+id/card_list_item"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/item_photo"
+                    android:layout_width="@dimen/show_poster_thumb_width"
+                    android:layout_height="@dimen/show_poster_thumb_height"
+                    android:padding="5dp"
+                    android:src="@color/black" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/title_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="5dp"
+                        android:textColor="@color/off_white"
+                        android:textSize="@dimen/list_item_text_size" />
+
+                    <TextView
+                        android:id="@+id/show_timings"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="5dp"
+                        android:textColor="@color/off_white"
+                        android:textSize="@dimen/secondary_list_item_text_size" />
+
+                    <TextView
+                        android:id="@+id/show_runtime"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="5dp"
+                        android:textColor="@color/off_white"
+                        android:textSize="@dimen/tertiary_list_item_text_size" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </FrameLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/season_expand_collapse_layout"
+                android:layout_width="match_parent"
+                android:layout_height="40dip"
+                android:background="@color/card_page_background">
+
+                <FrameLayout
+                    android:id="@+id/prev_ep_indicator"
+                    android:layout_width="70dip"
+                    android:layout_height="40dip"
+                    android:layout_alignParentLeft="true">
+
+                    <ImageView
+                        android:layout_width="20dip"
+                        android:layout_height="30dip"
+                        android:layout_gravity="left"
+                        android:layout_marginLeft="@dimen/intra_detail_margin_views"
+                        android:layout_marginTop="5dip"
+                        android:background="@drawable/prev_indicator" />
+                </FrameLayout>
+
+                <TextView
+                    android:id="@+id/episodeHeader"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="Select Episode"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/list_item_text_size" />
+
+                <FrameLayout
+                    android:id="@+id/next_ep_indicator"
+                    android:layout_width="70dip"
+                    android:layout_height="40dip"
+                    android:layout_alignParentRight="true">
+
+                    <ImageView
+                        android:layout_width="20dip"
+                        android:layout_height="30dip"
+                        android:layout_gravity="right"
+                        android:layout_marginRight="@dimen/intra_detail_margin_views"
+                        android:layout_marginTop="5dip"
+                        android:background="@drawable/next_indicator" />
+                </FrameLayout>
+            </RelativeLayout>
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/episode_content_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/episodeTitle"
+                        android:layout_width="220dip"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/intra_detail_margin_views"
+                        android:layout_marginTop="@dimen/inter_detail_margin_views"
+                        android:singleLine="true"
+                        android:text="Episode Title"
+                        android:textColor="@color/off_white"
+                        android:textSize="@dimen/detail_header_text_size" />
+
+                    <TextView
+                        android:id="@+id/episodeFirstAirDay"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/inter_detail_margin_views"
+                        android:layout_marginTop="@dimen/inter_detail_margin_views"
+                        android:gravity="right"
+                        android:singleLine="true"
+                        android:textColor="@color/off_white"
+                        android:textSize="@dimen/secondary_list_item_text_size" />
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/episodeImage"
+                    android:layout_width="300dip"
+                    android:layout_height="170dip"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/inter_detail_margin_views"
+                    android:background="@android:color/black"
+                    android:scaleType="fitXY" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/intra_detail_margin_views"
+                    android:layout_marginTop="@dimen/inter_detail_margin_views"
+                    android:text="@string/overview"
+                    android:textColor="@color/off_white"
+                    android:textSize="@dimen/detail_header_text_size" />
+
+                <TextView
+                    android:id="@+id/episode_overview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/intra_detail_margin_views"
+                    android:layout_marginTop="@dimen/intra_detail_margin_views"
+                    android:textColor="@color/off_white"
+                    android:textSize="@dimen/secondary_list_item_text_size" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/intra_detail_margin_views"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/intra_detail_margin_views"
+                        android:layout_marginTop="@dimen/inter_detail_margin_views"
+                        android:gravity="center"
+                        android:text="@string/trailers"
+                        android:textColor="@color/off_white"
+                        android:textSize="@dimen/detail_header_text_size" />
+
+                    <ImageView
+                        android:id="@+id/show_trailer"
+                        android:layout_width="72dp"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="@dimen/intra_detail_margin_views"
+                        android:background="@drawable/youtube_icon" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+</FrameLayout>

@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">My TV List</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="transition_name">cardShare</string>
+    <string name="delete">DELETE</string>
+    <string name="rating">Rating:</string>
+    <string name="awards">Awards</string>
+    <string name="overview">Overview</string>
+    <string name="genres">Genres</string>
+    <string name="trailers">Find Trailers</string>
+</resources>

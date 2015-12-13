@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/show_background"
+        android:orientation="vertical">
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.75"
+        android:background="@android:color/black">
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/add_search_show_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dip"
+            android:gravity="center"
+            android:text="Add to  list"
+            android:textColor="@color/white"
+            android:textSize="@dimen/list_item_text_size"
+            android:textStyle="bold" />
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <android.widget.SearchView
+                android:id="@+id/searchView"
+                android:layout_width="240dp"
+                android:layout_height="40dp"
+                android:layout_margin="@dimen/intra_detail_margin_views"
+                android:queryHint="Search"
+                android:iconifiedByDefault="false"
+                android:background="@android:color/darker_gray" />
+
+            <ImageView
+                android:id="@+id/done_button"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_gravity="right"
+                android:layout_toRightOf="@id/searchView"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/intra_detail_margin_views"
+                android:src="@drawable/done_selector" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/loading_text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="Loading..." />
+
+        <ListView
+            android:id="@+id/interesting_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="@null"
+            android:dividerHeight="0dp" />
+
+
+        <ListView
+            android:id="@+id/searchList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="@null"
+            android:dividerHeight="0dp"
+            android:visibility="gone" />
+    </LinearLayout>
+
+</FrameLayout>
+

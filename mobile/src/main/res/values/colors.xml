@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="blue">#4d4dbc</color>
+    <color name="darker_gray">#aaa</color>
+    <color name="white">#fff</color>
+    <color name="off_white">#F2EEEE</color>
+    <color name="black">#000</color>
+    <!-- Reference: https://www.google.com/design/spec/style/color.html#color-color-palette -->
+    <color name="card_item_background">#9e9e9e</color>
+    <color name="card_page_background">#bdbdbd</color>
+    <color name="disabled_text_color">#424242</color>
+
+</resources>
