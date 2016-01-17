@@ -656,7 +656,9 @@ public class AddShowActivity extends Activity implements TaskFetchListener, Choo
             for (int i = 0; i < genreArray.length - 1; i++) {
                 genres = genres + genreArray[i] + ",";
             }
-            genres = genres + genreArray[genreArray.length - 1];
+            if (genreArray.length >= 1) {
+                genres = genres + genreArray[genreArray.length - 1];
+            }
             values.put(Utils.GENRES, genres);
         }
         values.put(Utils.AIRED_EPISODES, show.getAiredEpisodes());
