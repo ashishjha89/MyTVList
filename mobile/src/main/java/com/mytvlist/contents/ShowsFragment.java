@@ -11,6 +11,7 @@ import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -113,7 +114,7 @@ public class ShowsFragment extends Fragment implements ShowsAdapter.OnShowItemSe
         mShowsAdapter = new ShowsAdapter(getActivity().getBaseContext(), this, mTracker);
         IntentFilter filter = new IntentFilter();
         filter.addAction(Utils.LOAD_SHOW_IMAGES);
-        getActivity().registerReceiver(mShowUpdatedReceiver, filter);
+        LocalBroadcastManager.getInstance(mContext).registerReceiver(mShowUpdatedReceiver, filter);
         checkForUpdatesInShows();
     }
 
@@ -153,7 +154,7 @@ public class ShowsFragment extends Fragment implements ShowsAdapter.OnShowItemSe
         // Log.d(TAG, "onDestroy()");
         super.onDestroy();
         try {
-            getActivity().unregisterReceiver(mShowUpdatedReceiver);
+            LocalBroadcastManager.getInstance(mContext).unregisterReceiver(mShowUpdatedReceiver);
         } catch (IllegalArgumentException e) {
             if (e.getMessage().contains("Receiver not registered")) {
                 // Ignore this exception. This is exactly what is desired

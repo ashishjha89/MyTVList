@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
 import android.view.WindowManager;
 
@@ -68,7 +69,7 @@ public class SplashScreenActivity extends Activity {
 
             IntentFilter filter = new IntentFilter();
             filter.addAction(Utils.LOAD_INTERESTING_SHOWS);
-            registerReceiver(mInterestingShowAdditionReceiver, filter);
+            LocalBroadcastManager.getInstance(this).registerReceiver(mInterestingShowAdditionReceiver, filter);
 
             mLoadingProgressDialog = ProgressDialog.show(this, "Loading Shows ...", "", true);
             mLoadingProgressDialog.setCancelable(true);
@@ -86,7 +87,7 @@ public class SplashScreenActivity extends Activity {
     protected void onDestroy() {
         super.onDestroy();
         try {
-            unregisterReceiver(mInterestingShowAdditionReceiver);
+            LocalBroadcastManager.getInstance(this).unregisterReceiver(mInterestingShowAdditionReceiver);
         } catch (IllegalArgumentException e) {
             if (e.getMessage().contains("Receiver not registered")) {
                 // Ignore this exception. This is exactly what is desired

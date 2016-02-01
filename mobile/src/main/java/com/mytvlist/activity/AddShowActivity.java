@@ -13,6 +13,7 @@ import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
@@ -98,7 +99,7 @@ public class AddShowActivity extends Activity implements TaskFetchListener, Choo
         mSearchView.clearFocus();
         IntentFilter filter = new IntentFilter();
         filter.addAction(Utils.LOAD_INTERESTING_SHOWS);
-        registerReceiver(mInterestingShowAdditionReceiver, filter);
+        LocalBroadcastManager.getInstance(this).registerReceiver(mInterestingShowAdditionReceiver, filter);
     }
 
     @Override
@@ -106,7 +107,7 @@ public class AddShowActivity extends Activity implements TaskFetchListener, Choo
         //Log.d(TAG, "onDestroy()");
         super.onDestroy();
         try {
-            unregisterReceiver(mInterestingShowAdditionReceiver);
+            LocalBroadcastManager.getInstance(this).unregisterReceiver(mInterestingShowAdditionReceiver);
         } catch (IllegalArgumentException e) {
             if (e.getMessage().contains("Receiver not registered")) {
                 // Ignore this exception. This is exactly what is desired

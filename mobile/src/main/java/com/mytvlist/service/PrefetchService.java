@@ -4,6 +4,7 @@ import android.app.IntentService;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.support.v4.content.LocalBroadcastManager;
 import android.util.DisplayMetrics;
 import android.util.Log;
 
@@ -173,7 +174,7 @@ public class PrefetchService extends IntentService {
     private void broadcastAddShowIntent() {
         Intent intent = new Intent();
         intent.setAction(Utils.LOAD_INTERESTING_SHOWS);
-        sendBroadcast(intent);
+        LocalBroadcastManager.getInstance(this).sendBroadcast(intent);
     }
 
     private void broadcastUpdatedPosterImageIntent(String fileUrl, String tId) {
@@ -181,7 +182,7 @@ public class PrefetchService extends IntentService {
         intent.setAction(Utils.LOAD_SHOW_IMAGES);
         intent.putExtra(Utils.POSTER_THUMB_URI, fileUrl);
         intent.putExtra(Utils.TRAKT_ID, tId);
-        sendBroadcast(intent);
+        LocalBroadcastManager.getInstance(this).sendBroadcast(intent);
     }
 
     private void broadcastUpdatedBannerImageIntent(String fileUrl, String tId) {
@@ -189,7 +190,7 @@ public class PrefetchService extends IntentService {
         intent.setAction(Utils.LOAD_SHOW_IMAGES);
         intent.putExtra(Utils.BANNER_THUMB_URI, fileUrl);
         intent.putExtra(Utils.TRAKT_ID, tId);
-        sendBroadcast(intent);
+        LocalBroadcastManager.getInstance(this).sendBroadcast(intent);
     }
 
     private String getFileNameFromBitmap(String traktId, Bitmap bm, String fNameType, boolean isPoster) {
